@@ -21,10 +21,10 @@ obj/
 Thumbs.db
 
 # ASP.NET-specific
-appsettings.*.json  # 防止把 appsettings.Development.json 等私密資料上傳（若含密碼）
+appsettings.*.json  
 
 # EF Core Migrations
-Migrations/         # 可保留也可忽略，看你是否希望保留遷移紀錄
+Migrations/         
 
 # Logs and database
 *.log
@@ -37,7 +37,7 @@ Migrations/         # 可保留也可忽略，看你是否希望保留遷移紀�
 secrets.json
 .env
 
-# Node modules (如果有用到前端模組)
+# Node modules 
 node_modules/
 
 # Others
