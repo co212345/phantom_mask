@@ -1,0 +1,44 @@
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vscode/
+.idea/
+.vs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# ASP.NET-specific
+appsettings.*.json  # 防止把 appsettings.Development.json 等私密資料上傳（若含密碼）
+
+# EF Core Migrations
+Migrations/         # 可保留也可忽略，看你是否希望保留遷移紀錄
+
+# Logs and database
+*.log
+*.mdf
+*.ldf
+*.db
+*.bak
+
+# Secrets
+secrets.json
+.env
+
+# Node modules (如果有用到前端模組)
+node_modules/
+
+# Others
+*.swp
