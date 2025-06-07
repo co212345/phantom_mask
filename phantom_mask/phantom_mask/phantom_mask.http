@@ -1,0 +1,6 @@
+@phantom_mask_HostAddress = http://localhost:5178
+
+GET {{phantom_mask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
