@@ -20,7 +20,22 @@ namespace phantom_mask
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
-
+            if (args.Length == 2 && args[0] == "import:pharmacies")
+            {
+                using var scope = app.Services.CreateScope();
+                var db = scope.ServiceProvider.GetRequiredService<PharmacyDbContext>();
+                await PharmacySeeder.SeedAsync(db, args[1]);
+                Console.WriteLine($"已匯入藥局資料：{args[1]}");
+                return;
+            }
+            else if (args.Length == 2 && args[0] == "import:users")
+            {
+                using var scope = app.Services.CreateScope();
+                var db = scope.ServiceProvider.GetRequiredService<PharmacyDbContext>();
+                await UserSeeder.SeedAsync(db, args[1]);
+                Console.WriteLine($"已匯入使用者資料：{args[1]}");
+                return;
+            }
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -30,12 +45,6 @@ namespace phantom_mask
 
             app.UseHttpsRedirection();
 
-            using (var scope = app.Services.CreateScope())
-            {
-                var db = scope.ServiceProvider.GetRequiredService<PharmacyDbContext>();
-                await PharmacySeeder.SeedAsync(db, "Data/pharmacies.json");
-                await UserSeeder.SeedAsync(db, "Data/Users.json");
-            }
 
 
 

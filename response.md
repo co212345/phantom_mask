@@ -3,19 +3,19 @@
 ## A. Required Information
 ### A.1. Requirement Completion Rate
 - [x] List all pharmacies open at a specific time and on a day of the week if requested.
-  - Implemented at xxx API.
+  - Implemented at : 'GET /api/pharmacies/open?day={0-6}&time=HH:mm'
 - [x] List all masks sold by a given pharmacy, sorted by mask name or price.
-  - Implemented at xxx API.
+  - Implemented at : 'GET /api/pharmacy/{PharmacyId}/?minPrice=10&maxPrice=50&x=2&type=more'
 - [x] List all pharmacies with more or less than x mask products within a price range.
-  - Implemented at xxx API.
+  - Implemented at : 'GET /api/pharmacy/mask-count?minPrice = '.
 - [x] The top x users by total transaction amount of masks within a date range.
-  - Implemented at xxx API.
+  - Implemented at : 'GET /api/users/top-by-amount?start=2021-01-01&end=2021-01-15&top=5'
 - [x] The total number of masks and dollar value of transactions within a date range.
-  - Implemented at xxx API.
+  - Implemented at : 'GET /api/users/transction-summary?start=2021-01-01&2021-01-15'
 - [x] Search for pharmacies or masks by name, ranked by relevance to the search term.
-  - Implemented at xxx API.
+  - Implemented at : 'GET /api/Search?query={Your keyword}'
 - [x] Process a user purchases a mask from a pharmacy, and handle all relevant data changes in an atomic transaction.
-  - Implemented at xxx API.
+  - Implemented at : 'POST /api/transactions/purchase'
 ### A.2. API Document
 > Please describe how to use the API in the API documentation. You can edit by any format (e.g., Markdown or OpenAPI) or free tools (e.g., [hackMD](https://hackmd.io/), [postman](https://www.postman.com/), [google docs](https://docs.google.com/document/u/0/), or  [swagger](https://swagger.io/specification/)).
 
@@ -25,8 +25,8 @@ Import [this](#api-document) json file to Postman.
 Please run these two script commands to migrate the data into the database.
 
 ```bash
-$ rake import_data:pharmacies[PATH_TO_FILE]
-$ rake import_data:users[PATH_TO_FILE]
+dotnet run -- import:pharmacies Data/pharmacies.json
+dotnet run -- import:users Data/users.json
 ```
 ## B. Bonus Information
 
